@@ -34,6 +34,7 @@ node['ssl-vault']['certificates'].each do |cert_name, cert|
     owner 'root'
     group node['ssl-vault']['cert_group']
     mode '0440'
+    sensitive true
     variables(
       :key => vault_item['key'],
       :certificate => vault_item['certificate']
